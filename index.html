@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mind Lift</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+    }
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,.08);
+    }
+    .chat {
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .user { color: #1d4ed8; margin-bottom: 6px; }
+    .bot { color: #065f46; margin-bottom: 6px; }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #4f46e5;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background: #4338ca; }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Mind Lift</h1>
+  <p>Lift your mind. Succeed in school.</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2>🧠 Mental Health Support</h2>
+    <div id="mentalChat" class="chat"></div>
+    <input id="mentalInput" placeholder="How are you feeling today?" />
+    <button onclick="mentalSend()">Send</button>
+    <p style="font-size:12px;color:#666">
+      Not a replacement for professional help.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>📚 School Help</h2>
+    <div id="schoolChat" class="chat"></div>
+    <input id="schoolInput" placeholder="Ask about homework, tests, or studying" />
+    <button onclick="schoolSend()">Send</button>
+  </div>
+</main>
+
+<footer>
+  <p>Mind Lift Premium coming soon • AI tutor • Quizzes • Study plans</p>
+</footer>
+
+<script>
+function add(chat, text, type) {
+  const div = document.createElement('div');
+  div.className = type;
+  div.innerText = text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function mentalSend() {
+  const input = document.getElementById('mentalInput');
+  const chat = document.getElementById('mentalChat');
+  if (!input.value) return;
+
+  const msg = input.value.toLowerCase();
+  add(chat, input.value, 'user');
+
+  let response = "I'm here with you. Want to talk more about that?";
+
+  if (msg.includes('stress') || msg.includes('overwhelmed'))
+    response = "Feeling overwhelmed is common. Try 3 slow breaths right now.";
+
+  if (msg.includes('sad') || msg.includes('depressed'))
+    response = "I'm really sorry you're feeling this way. You're not alone.";
+
+  if (msg.includes('anxiety') || msg.includes('anxious'))
+    response = "A grounding trick: name 5 things you see, 4 you can touch.";
+
+  setTimeout(() => add(chat, response, 'bot'), 600);
+  input.value = '';
+}
+
+function schoolSend() {
+  const input = document.getElementById('schoolInput');
+  const chat = document.getElementById('schoolChat');
+  if (!input.value) return;
+
+  const msg = input.value.toLowerCase();
+  add(chat, input.value, 'user');
+
+  let response = "I can help. What subject is this for?";
+
+  if (msg.includes('math'))
+    response = "For math, break the problem into steps.";
+
+  if (msg.includes('test') || msg.includes('exam'))
+    response = "For tests: practice problems + review notes.";
+
+  if (msg.includes('essay') || msg.includes('writing'))
+    response = "Start with a clear thesis, then add evidence.";
+
+  setTimeout(() => add(chat, response, 'bot'), 600);
+  input.value = '';
+}
+</script>
+
+</body>
+</html>
