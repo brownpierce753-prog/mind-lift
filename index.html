@@ -5,61 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MindLift</title>
 
-  <!-- LINK CSS -->
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+  <!-- HERO -->
   <header class="hero">
-    <h1>MindLift</h1>
-    <p>AI-powered study help and mental clarity for students.</p>
-    <button onclick="scrollToChat()">Try the AI</button>
+    <nav class="nav">
+      <div class="logo">MindLift</div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#chat">AI Tutor</a>
+        <a href="#premium">Premium</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Calm your mind.<br>Focus your future.</h1>
+      <p>
+        MindLift helps students think clearly, study smarter, and stay mentally strong —
+        without pressure or burnout.
+      </p>
+      <button onclick="scrollToChat()">Start a session</button>
+    </div>
   </header>
 
-  <section class="features">
-    <div class="card">
-      <h3>📚 Study Smarter</h3>
-      <p>Guides, quizzes, and explanations made simple.</p>
+  <!-- FEATURES -->
+  <section id="features" class="features">
+    <div class="feature">
+      <h3>🧠 Mental Clarity</h3>
+      <p>
+        When stress or anxiety hits, MindLift helps you slow down, reframe,
+        and regain control.
+      </p>
     </div>
-    <div class="card">
-      <h3>🧠 Mental Reset</h3>
-      <p>Reduce stress and regain focus in minutes.</p>
+
+    <div class="feature">
+      <h3>📚 Smart Study</h3>
+      <p>
+        Use proven methods like Pomodoro, active recall, and guided focus sessions.
+      </p>
     </div>
-    <div class="card">
-      <h3>⚡ AI Tutor</h3>
-      <p>Ask anything. Learn faster.</p>
+
+    <div class="feature">
+      <h3>🤖 AI Guidance</h3>
+      <p>
+        Ask questions, talk through problems, and get clear next steps — anytime.
+      </p>
     </div>
   </section>
 
+  <!-- CHAT -->
   <section id="chat" class="chat-section">
-    <h2>AI Study Assistant</h2>
+    <h2>Your space to think</h2>
+    <p class="chat-subtitle">
+      Talk it out. Study it through. One step at a time.
+    </p>
 
-    <div class="chatbox">
-      <div id="messages" class="messages">
-        <div class="ai">Hi! Ask me anything about school or studying.</div>
+    <div class="chat-container">
+      <div id="chatBox" class="chat-box">
+        <div class="bot">
+          Hi — I’m MindLift. What’s on your mind right now?
+        </div>
       </div>
 
-      <div class="input-area">
-        <input id="userInput" type="text" placeholder="Type your question..." />
+      <div class="chat-input">
+        <input
+          id="userInput"
+          type="text"
+          placeholder="Type here…"
+          autocomplete="off"
+        />
         <button onclick="sendMessage()">Send</button>
       </div>
     </div>
   </section>
 
+  <!-- PREMIUM -->
+  <section id="premium" class="premium">
+    <h2>Go deeper with Premium</h2>
+    <p>
+      Unlock unlimited sessions, personalized study plans,
+      and advanced mental tools.
+    </p>
+
+    <div class="premium-card">
+      <h3>MindLift+</h3>
+      <ul>
+        <li>Unlimited AI conversations</li>
+        <li>Custom study schedules</li>
+        <li>Stress & focus programs</li>
+        <li>Priority features</li>
+      </ul>
+      <button disabled>Coming Soon</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 MindLift</p>
+    <p>© 2025 MindLift • Built to help students breathe and grow</p>
   </footer>
 
-  <!-- LINK JAVASCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>
 
+    
  
 
     
   
+
 
 
 
