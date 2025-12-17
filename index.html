@@ -4,125 +4,51 @@
   <meta charset="UTF-8" />
   <title>Mind Lift</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #eef2ff, #ecfeff);
-      color: #1f2937;
-    }
-
-    header {
-      padding: 70px 20px;
-      text-align: center;
-      background: white;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-
-    section {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 600;
-    }
-
-    h2 {
-      font-weight: 600;
-    }
-
-    p {
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
-    }
-
-    .cta {
-      margin-top: 25px;
-      padding: 14px 28px;
-      border-radius: 999px;
-      background: #4f46e5;
-      color: white;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .cta:hover {
-      background: #3730a3;
-    }
-
-    .chat-box {
-      max-height: 300px;
-      overflow-y: auto;
-      margin-bottom: 15px;
-    }
-
-    .msg {
-      margin-bottom: 10px;
-      padding: 10px 14px;
-      border-radius: 12px;
-      max-width: 80%;
-    }
-
-    .user {
-      background: #dbeafe;
-      margin-left: auto;
-      text-align: right;
-    }
-
-    .bot {
-      background: #f3f4f6;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #d1d5db;
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-
-    select {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #d1d5db;
-      margin-bottom: 10px;
-      width: 100%;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.85rem;
-      color: #6b7280;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header class="hero">
+    <h1>Mind Lift</h1>
+    <p>Your calm space for focus, growth, and clarity.</p>
+    <button onclick="scrollToChat()">Start a Session</button>
+  </header>
 
-<header>
-  <h1>Mind Lift</h1>
-  <p>Support your mind. Strength
+  <section class="features">
+    <div class="card">
+      <h3>🧘 Mental Reset</h3>
+      <p>Guided support when stress, anxiety, or overthinking hits.</p>
+    </div>
+    <div class="card">
+      <h3>📚 Study Mode</h3>
+      <p>Pomodoro focus, active recall prompts, and productivity plans.</p>
+    </div>
+    <div class="card">
+      <h3>💬 Deep Chat</h3>
+      <p>Thoughtful conversations that help you think clearly.</p>
+    </div>
+  </section>
+
+  <section id="chat" class="chat-section">
+    <h2>Mind Lift Chat</h2>
+    <div id="chatBox" class="chat-box">
+      <div class="bot">Hi. I’m Mind Lift. How are you feeling right now?</div>
+    </div>
+
+    <input id="userInput" type="text" placeholder="Type here..." />
+    <button onclick="sendMessage()">Send</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Mind Lift — Free & Premium Mental Tools</p>
+  </footer>
+</body>
+</html>
+ 
 
     
   
+
 
 
 
