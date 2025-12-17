@@ -2,52 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mind Lift</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>MindLift</title>
+
+  <!-- LINK CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
   <header class="hero">
-    <h1>Mind Lift</h1>
-    <p>Your calm space for focus, growth, and clarity.</p>
-    <button onclick="scrollToChat()">Start a Session</button>
+    <h1>MindLift</h1>
+    <p>AI-powered study help and mental clarity for students.</p>
+    <button onclick="scrollToChat()">Try the AI</button>
   </header>
 
   <section class="features">
     <div class="card">
-      <h3>🧘 Mental Reset</h3>
-      <p>Guided support when stress, anxiety, or overthinking hits.</p>
+      <h3>📚 Study Smarter</h3>
+      <p>Guides, quizzes, and explanations made simple.</p>
     </div>
     <div class="card">
-      <h3>📚 Study Mode</h3>
-      <p>Pomodoro focus, active recall prompts, and productivity plans.</p>
+      <h3>🧠 Mental Reset</h3>
+      <p>Reduce stress and regain focus in minutes.</p>
     </div>
     <div class="card">
-      <h3>💬 Deep Chat</h3>
-      <p>Thoughtful conversations that help you think clearly.</p>
+      <h3>⚡ AI Tutor</h3>
+      <p>Ask anything. Learn faster.</p>
     </div>
   </section>
 
   <section id="chat" class="chat-section">
-    <h2>Mind Lift Chat</h2>
-    <div id="chatBox" class="chat-box">
-      <div class="bot">Hi. I’m Mind Lift. How are you feeling right now?</div>
-    </div>
+    <h2>AI Study Assistant</h2>
 
-    <input id="userInput" type="text" placeholder="Type here..." />
-    <button onclick="sendMessage()">Send</button>
+    <div class="chatbox">
+      <div id="messages" class="messages">
+        <div class="ai">Hi! Ask me anything about school or studying.</div>
+      </div>
+
+      <div class="input-area">
+        <input id="userInput" type="text" placeholder="Type your question..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Mind Lift — Free & Premium Mental Tools</p>
+    <p>© 2025 MindLift</p>
   </footer>
+
+  <!-- LINK JAVASCRIPT -->
+  <script src="script.js"></script>
 </body>
 </html>
+
  
 
     
   
+
 
 
 
