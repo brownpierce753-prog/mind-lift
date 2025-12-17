@@ -7,94 +7,167 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f6fb;
       margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+      color: #1f2937;
     }
+
     header {
-      background: #4f46e5;
-      color: white;
-      padding: 20px;
+      padding: 60px 20px;
       text-align: center;
     }
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #4f46e5;
     }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+      color: #374151;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
     .card {
       background: white;
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 6px 15px rgba(0,0,0,.08);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
     }
-    .chat {
-      height: 300px;
-      overflow-y: auto;
-      border: 1px solid #ddd;
-      padding: 10px;
-      border-radius: 8px;
+
+    .card h2 {
+      margin-top: 0;
       margin-bottom: 10px;
     }
-    .user { color: #1d4ed8; margin-bottom: 6px; }
-    .bot { color: #065f46; margin-bottom: 6px; }
-    input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 8px;
+
+    .card p {
+      font-size: 0.95rem;
+      color: #4b5563;
     }
+
+    .chat {
+      flex: 1;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 12px;
+      overflow-y: auto;
+      margin: 15px 0;
+      background: #f9fafb;
+    }
+
+    .user {
+      background: #eef2ff;
+      padding: 8px 12px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+      align-self: flex-end;
+    }
+
+    .bot {
+      background: #ecfdf5;
+      padding: 8px 12px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+      align-self: flex-start;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
     button {
-      width: 100%;
-      padding: 10px;
+      padding: 12px;
+      border-radius: 12px;
       border: none;
-      border-radius: 8px;
       background: #4f46e5;
       color: white;
+      font-weight: 600;
       cursor: pointer;
     }
-    button:hover { background: #4338ca; }
+
+    button:hover {
+      background: #4338ca;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
     footer {
       text-align: center;
-      font-size: 12px;
-      color: #555;
-      padding: 15px;
+      padding: 30px;
+      font-size: 0.85rem;
+      color: #6b7280;
     }
   </style>
 </head>
-
 <body>
 
 <header>
   <h1>Mind Lift</h1>
-  <p>Lift your mind. Succeed in school.</p>
+  <p>An anonymous space to improve your mental health, stay focused, and succeed in school — powered by smart guidance.</p>
 </header>
+
+<section>
+  <h2>How Mind Lift Helps</h2>
+  <p>Mind Lift is built for students who want support without pressure. No accounts. No judgment. Just help when you need it.</p>
+</section>
 
 <main>
   <div class="card">
     <h2>🧠 Mental Health Support</h2>
+    <p>Talk through stress, anxiety, or low motivation. Get grounding exercises and healthy coping strategies.</p>
+
     <div id="mentalChat" class="chat"></div>
-    <input id="mentalInput" placeholder="How are you feeling today?" />
+    <input id="mentalInput" placeholder="What’s been weighing on your mind?" />
     <button onclick="mentalSend()">Send</button>
-    <p style="font-size:12px;color:#666">
-      Not a replacement for professional help.
-    </p>
+
+    <p style="font-size:12px;color:#6b7280;margin-top:10px;">This tool offers emotional support, not professional therapy.</p>
   </div>
 
   <div class="card">
-    <h2>📚 School Help</h2>
+    <h2>📚 School & Study Help</h2>
+    <p>Get help with homework, essays, test prep, and study strategies — step by step.</p>
+
     <div id="schoolChat" class="chat"></div>
-    <input id="schoolInput" placeholder="Ask about homework, tests, or studying" />
-    <button onclick="schoolSend()">Send</button>
+    <input id="schoolInput" placeholder="What subject or assignment are you working on?" />
+    <button onclick="schoolSend()">Ask</button>
   </div>
 </main>
 
+<section>
+  <h2>Mind Lift Premium</h2>
+  <p>Unlimited AI help • Personalized study plans • Practice quizzes • Focus tools • Priority responses</p>
+</section>
+
 <footer>
-  <p>Mind Lift Premium coming soon • AI tutor • Quizzes • Study plans</p>
+  <p>© 2025 Mind Lift • Support when you need it</p>
 </footer>
 
 <script>
@@ -114,18 +187,18 @@ function mentalSend() {
   const msg = input.value.toLowerCase();
   add(chat, input.value, 'user');
 
-  let response = "I'm here with you. Want to talk more about that?";
+  let response = "I'm really glad you shared that. Do you want advice, or just someone to listen?";
 
   if (msg.includes('stress') || msg.includes('overwhelmed'))
-    response = "Feeling overwhelmed is common. Try 3 slow breaths right now.";
+    response = "When stress builds up, small pauses help. Try inhaling for 4 seconds, exhaling for 6.";
 
-  if (msg.includes('sad') || msg.includes('depressed'))
-    response = "I'm really sorry you're feeling this way. You're not alone.";
+  if (msg.includes('sad') || msg.includes('down'))
+    response = "Feeling down doesn’t mean you’re weak. What’s one small thing that usually helps, even a little?";
 
   if (msg.includes('anxiety') || msg.includes('anxious'))
-    response = "A grounding trick: name 5 things you see, 4 you can touch.";
+    response = "Anxiety pulls your thoughts forward. Try grounding yourself by naming 3 things you can hear.";
 
-  setTimeout(() => add(chat, response, 'bot'), 600);
+  setTimeout(() => add(chat, response, 'bot'), 700);
   input.value = '';
 }
 
@@ -137,21 +210,25 @@ function schoolSend() {
   const msg = input.value.toLowerCase();
   add(chat, input.value, 'user');
 
-  let response = "I can help. What subject is this for?";
+  let response = "Let’s break this down together. What part feels hardest?";
 
   if (msg.includes('math'))
-    response = "For math, break the problem into steps.";
-
-  if (msg.includes('test') || msg.includes('exam'))
-    response = "For tests: practice problems + review notes.";
+    response = "Math works best step-by-step. What topic are you on — algebra, geometry, or something else?";
 
   if (msg.includes('essay') || msg.includes('writing'))
-    response = "Start with a clear thesis, then add evidence.";
+    response = "A strong essay starts with a clear claim. What’s the question or prompt?";
 
-  setTimeout(() => add(chat, response, 'bot'), 600);
+  if (msg.includes('test') || msg.includes('exam'))
+    response = "For tests, spaced practice works best. How soon is the test?";
+
+  setTimeout(() => add(chat, response, 'bot'), 700);
   input.value = '';
 }
 </script>
 
 </body>
 </html>
+
+
+
+
